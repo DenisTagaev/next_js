@@ -9,7 +9,7 @@ export default function Home() {
           <span className="font-bold">Denis</span>
         </span>
       </p>
-      <Posts></Posts>
+      <Posts/>
     </main>
   )
 }

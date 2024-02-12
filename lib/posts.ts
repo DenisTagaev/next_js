@@ -27,7 +27,8 @@ export function getSortedPostsData(): BlogPost[] {
     return allPostsData.sort((a, b) => a.date < b.date ? 1: -1);
 }
 
-export async function getPostData(id: string) {
+export async function getPostData(id: string): 
+    Promise<BlogPost & { contentHTML: string}> {
     const fullPath: string = path.join(postsDirectory, `${id}.md`);
     const fileContent: string = fs.readFileSync(fullPath, 'utf8');
     const matterContent: matter.GrayMatterFile<string> = matter(fileContent);
